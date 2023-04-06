@@ -1,0 +1,13 @@
+{% extends 'foundation.html.twig' %}
+
+{% block body %}
+<h2>{{ wish.title }}</h2>
+    <p class = "wish-credit"> Created by {{ wish.author }} on {{ wish.dateCreated | date("y-m-d")}} </p>
+    <div>{{ wish.description|nl2br }}</div>
+
+{% endblock %}
+
+{% block title %}
+    {{ wish.title }} | {{ wish.category.name }}
+{% endblock %}
+

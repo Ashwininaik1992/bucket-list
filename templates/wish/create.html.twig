@@ -1,0 +1,16 @@
+{% extends 'foundation.html.twig' %}
+
+{% block body %}
+<div>
+    {{ form_start (wishForm) }}
+    {{ form_widget (wishForm) }}
+
+    <button>Create!</button>
+    {{ form_end (wishForm) }}
+</div>
+{% endblock %}
+
+{% block title %}
+Add your wishes | {{ parent() }}
+{% endblock %}
+

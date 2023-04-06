@@ -1,7 +1,10 @@
 <nav>
     <ul>
-        <li><a href="#" title="Home">Home</a></li>
-        <li><a href="#" title="Contact">Contact</a></li>
-        <li><a href="#" title="Suggest">Suggest</a></li>
+        <li><a href="{{ path('app_main_home') }}" title="Home">Home</a></li>
+        <li><a href="{{ path('app_main_aboutus') }}" title="Aboutus">About us</a></li>
+        <li><a href="{{ path('app_wish_list') }}" title="list">WishList</a></li>
+        <li><a href="{{ path('app_wish_create') }}" title="Create">Add Yours!</a></li>
+        <li><a href="{{ path('app_main_contact') }}" title="Contact">Contact</a></li>
+
     </ul>
 </nav>

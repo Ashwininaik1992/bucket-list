@@ -6,16 +6,36 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {% block title %} Bucket-List {% endblock %} </title>
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
 </head>
+
 <body>
 
+<div class="container">
 <header>
-    <h1>Bucket List</h1>
-
+    <h1>
+        <a href="{{ path('app_main_home')}}">
+            <img src="{{ asset('img/AUSSIE-BUCKETLIST-LOGO.png') }}" alt="BucketList">
+        </a>
+    </h1>
+    {% include('main/nav.html.twig') %}
 </header>
+
+    {% for label, messages in app.flashes %} {% for message in messages %}
+        <div class="alert alert-{{ label }}"> {{ message }} </div>
+    {% endfor %}
+    {% endfor %}
+
+
+
 <main>
 {% block body %} {% endblock %}
-    {% include('main/nav.html.twig') %}
+
 </main>
 
 <footer>
@@ -23,6 +43,7 @@
     {% include('main/nav.html.twig') %}
 
 </footer>
-
+</div>
 </body>
+
 </html>

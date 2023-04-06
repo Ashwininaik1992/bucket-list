@@ -2,37 +2,8 @@
 
 {% block body %}
 
-    {# Create a variable #}
-    {% set name = "Ashwini" %}
-    <h2>{{ name|upper}}</h2>
-
-    {# Create a table #}
-    <h2>
-        {% set colors =["red","pink","blue", "white"] %}
-        {% for color in colors %}
-            <div>{{color|join('/')}}</div>
-        {%endfor%}
-    </h2>
-
-    {# un objet #}
-    {% set book = {
-        title:'Harry Potter',
-        year:'1992',
-        author:'JK Rowling'
-    }
-    %}
-    <h3>
-        {{ book.author }}
-    </h3>
-
-    <div>
-        {% for key, val in book %}
-            <div>{{ key }} : {{ val }}</div>
-        {% endfor %}
-    </div>
-
 {% endblock %}
 
 {% block title %}
-    {{ parent() | contact}}
+
 {% endblock %}

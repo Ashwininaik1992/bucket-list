@@ -1,0 +1,18 @@
+{% extends 'foundation.html.twig' %}
+
+{% block title %}
+    The best bucket list ever |{{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="wishes-list">
+        <h2>All wishes!</h2>
+        {% for wish in wishes %}
+            <article>
+                <a href="{{ path('app_wish_details', {id: wish.id}) }}" title="View this wish in details">{{ wish.title }} {{ wish.category.name }}
+                </a>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
+
